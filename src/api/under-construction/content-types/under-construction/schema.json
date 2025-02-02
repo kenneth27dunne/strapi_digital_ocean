@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "under_constructions",
+  "info": {
+    "singularName": "under-construction",
+    "pluralName": "under-constructions",
+    "displayName": "Under construction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "contactEmail": {
+      "type": "email"
+    }
+  }
+}

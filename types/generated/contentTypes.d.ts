@@ -394,6 +394,37 @@ export interface ApiTestTest extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUnderConstructionUnderConstruction
+  extends Struct.SingleTypeSchema {
+  collectionName: 'under_constructions';
+  info: {
+    displayName: 'Under construction';
+    pluralName: 'under-constructions';
+    singularName: 'under-construction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactEmail: Schema.Attribute.Email;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::under-construction.under-construction'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subHeading: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -904,6 +935,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::test.test': ApiTestTest;
+      'api::under-construction.under-construction': ApiUnderConstructionUnderConstruction;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
