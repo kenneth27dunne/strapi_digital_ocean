@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_component_feature_bullets",
+  "info": {
+    "displayName": "featureBullets"
+  },
+  "options": {},
+  "attributes": {
+    "Bullet": {
+      "type": "string"
+    }
+  }
+}

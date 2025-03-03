@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_component_services",
+  "info": {
+    "displayName": "service",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ImagePath": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

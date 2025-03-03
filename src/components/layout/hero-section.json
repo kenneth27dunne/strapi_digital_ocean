@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_hero_sections",
+  "info": {
+    "displayName": "hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Pill": {
+      "type": "string",
+      "required": true
+    },
+    "Title": {
+      "type": "richtext",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.link"
+    }
+  }
+}

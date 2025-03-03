@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_service_blocks",
+  "info": {
+    "displayName": "ServiceBlock"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "CallToActionURL": {
+      "type": "string"
+    },
+    "Services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.service"
+    }
+  }
+}

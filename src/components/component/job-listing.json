@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_job_listings",
+  "info": {
+    "displayName": "Job Listing",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "IncludeCategories": {
+      "type": "boolean",
+      "default": false
+    },
+    "IncludeSearch": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

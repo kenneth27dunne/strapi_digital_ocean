@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_layout_feature_blocks",
+  "info": {
+    "displayName": "FeatureBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "FeatureBullets": {
+      "displayName": "featureBullets",
+      "type": "component",
+      "repeatable": true,
+      "component": "component.feature-bullets"
+    },
+    "callToAction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.link"
+    },
+    "featureImagePath": {
+      "type": "string"
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

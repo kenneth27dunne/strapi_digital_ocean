@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "job_seekers_pages",
+  "info": {
+    "singularName": "job-seekers-page",
+    "pluralName": "job-seekers-pages",
+    "displayName": "Job Seekers Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero-section"
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.testimonial-block",
+        "layout.service-block",
+        "layout.info-card-block",
+        "layout.grid-image-cards",
+        "layout.feature2-block",
+        "layout.feature-block",
+        "layout.contact-form",
+        "component.job-listing"
+      ]
+    }
+  }
+}

@@ -369,6 +369,357 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
+  info: {
+    displayName: 'About Page';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.testimonial-block',
+        'layout.service-block',
+        'layout.info-card-block',
+        'layout.grid-image-cards',
+        'layout.feature2-block',
+        'layout.feature-block',
+        'layout.contact-form',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    job_listings: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::job-listing.job-listing'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_pages';
+  info: {
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.testimonial-block',
+        'layout.service-block',
+        'layout.info-card-block',
+        'layout.feature-block',
+        'layout.contact-form',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEmployerPageEmployerPage extends Struct.SingleTypeSchema {
+  collectionName: 'employer_pages';
+  info: {
+    displayName: 'Employer Page';
+    pluralName: 'employer-pages';
+    singularName: 'employer-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.testimonial-block',
+        'layout.service-block',
+        'layout.info-card-block',
+        'layout.grid-image-cards',
+        'layout.feature2-block',
+        'layout.feature-block',
+        'layout.contact-form',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::employer-page.employer-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    description: '';
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.feature-block',
+        'layout.service-block',
+        'layout.testimonial-block',
+        'layout.contact-form',
+        'layout.info-card-block',
+        'layout.feature2-block',
+        'layout.grid-image-cards',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJobListingJobListing extends Struct.CollectionTypeSchema {
+  collectionName: 'job_listings';
+  info: {
+    description: '';
+    displayName: 'Job Listing';
+    pluralName: 'job-listings';
+    singularName: 'job-listing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    Company: Schema.Attribute.String;
+    CompanyLogo: Schema.Attribute.Media<'images'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 230;
+      }>;
+    FullDescription: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::job-listing.job-listing'
+    > &
+      Schema.Attribute.Private;
+    Location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJobSeekersPageJobSeekersPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'job_seekers_pages';
+  info: {
+    description: '';
+    displayName: 'Job Seekers Page';
+    pluralName: 'job-seekers-pages';
+    singularName: 'job-seekers-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.testimonial-block',
+        'layout.service-block',
+        'layout.info-card-block',
+        'layout.grid-image-cards',
+        'layout.feature2-block',
+        'layout.feature-block',
+        'layout.contact-form',
+        'component.job-listing',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::job-seekers-page.job-seekers-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Struct.CollectionTypeSchema {
+  collectionName: 'pages';
+  info: {
+    description: '';
+    displayName: 'page';
+    pluralName: 'pages';
+    singularName: 'page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.testimonial-block',
+        'layout.service-block',
+        'layout.info-card-block',
+        'layout.grid-image-cards',
+        'layout.feature2-block',
+        'layout.feature-block',
+        'layout.contact-form',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
+      Schema.Attribute.Private;
+    page: Schema.Attribute.Relation<'manyToOne', 'api::page.page'>;
+    parents: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
+    publishedAt: Schema.Attribute.DateTime;
+    ShowInNav: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    Slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicePageServicePage extends Struct.SingleTypeSchema {
+  collectionName: 'service_pages';
+  info: {
+    displayName: 'Service Page';
+    pluralName: 'service-pages';
+    singularName: 'service-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.DynamicZone<
+      [
+        'layout.testimonial-block',
+        'layout.service-block',
+        'layout.info-card-block',
+        'layout.grid-image-cards',
+        'layout.feature2-block',
+        'layout.feature-block',
+        'layout.contact-form',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'layout.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-page.service-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTestTest extends Struct.CollectionTypeSchema {
   collectionName: 'tests';
   info: {
@@ -388,6 +739,38 @@ export interface ApiTestTest extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
+  collectionName: 'testimonials';
+  info: {
+    displayName: 'Testimonial';
+    pluralName: 'testimonials';
+    singularName: 'testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BusinessName: Schema.Attribute.String;
+    ClientName: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'images'>;
+    ImagePath: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -934,7 +1317,17 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::category.category': ApiCategoryCategory;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::employer-page.employer-page': ApiEmployerPageEmployerPage;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::job-listing.job-listing': ApiJobListingJobListing;
+      'api::job-seekers-page.job-seekers-page': ApiJobSeekersPageJobSeekersPage;
+      'api::page.page': ApiPagePage;
+      'api::service-page.service-page': ApiServicePageServicePage;
       'api::test.test': ApiTestTest;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::under-construction.under-construction': ApiUnderConstructionUnderConstruction;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

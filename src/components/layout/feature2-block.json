@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_layout_feature2_blocks",
+  "info": {
+    "displayName": "Feature2Block"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.feature-detail"
+    },
+    "ImagePath": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

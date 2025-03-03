@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_contact_forms",
+  "info": {
+    "displayName": "ContactForm"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_layout_grid_image_cards",
+  "info": {
+    "displayName": "GridImageCards"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.service"
+    }
+  }
+}

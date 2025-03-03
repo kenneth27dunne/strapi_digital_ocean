@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_pages",
+  "info": {
+    "singularName": "service-page",
+    "pluralName": "service-pages",
+    "displayName": "Service Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero-section"
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.testimonial-block",
+        "layout.service-block",
+        "layout.info-card-block",
+        "layout.grid-image-cards",
+        "layout.feature2-block",
+        "layout.feature-block",
+        "layout.contact-form"
+      ]
+    }
+  }
+}

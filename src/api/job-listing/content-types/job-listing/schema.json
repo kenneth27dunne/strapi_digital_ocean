@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_listings",
+  "info": {
+    "singularName": "job-listing",
+    "pluralName": "job-listings",
+    "displayName": "Job Listing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Company": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text",
+      "maxLength": 230,
+      "required": true
+    },
+    "CompanyLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "job_listings"
+    },
+    "FullDescription": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
