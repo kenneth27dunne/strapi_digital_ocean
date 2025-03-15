@@ -720,31 +720,6 @@ export interface ApiServicePageServicePage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiTestTest extends Struct.CollectionTypeSchema {
-  collectionName: 'tests';
-  info: {
-    displayName: 'test';
-    pluralName: 'tests';
-    singularName: 'test';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
@@ -1326,7 +1301,6 @@ declare module '@strapi/strapi' {
       'api::job-seekers-page.job-seekers-page': ApiJobSeekersPageJobSeekersPage;
       'api::page.page': ApiPagePage;
       'api::service-page.service-page': ApiServicePageServicePage;
-      'api::test.test': ApiTestTest;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::under-construction.under-construction': ApiUnderConstructionUnderConstruction;
       'plugin::content-releases.release': PluginContentReleasesRelease;
